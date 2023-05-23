@@ -12,15 +12,17 @@ import {
   SearchBoxWrapper,
   TableHeaderWrapper,
 } from "./styles";
+import { TableHeaderProps } from "../../types/componentPropsType";
 
-export const TableHeader: React.FC = () => {
+export const TableHeader: React.FC<TableHeaderProps> = ({
+  onAdd,
+  onSearch,
+}) => {
   const [searchInput, setSearchInput] = useState("");
 
-  const handleSearch = (e: React.FormEvent<HTMLInputElement>) => {
-    setSearchInput(e.currentTarget.value);
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchInput(e.target.value);
   };
-
-  const handleAddClick = () => {};
 
   return (
     <TableHeaderWrapper>
@@ -37,7 +39,7 @@ export const TableHeader: React.FC = () => {
             suffix={<IconSearch />}
           />
         </SearchBoxWrapper>
-        <AddButtonWrapper onClick={handleAddClick}>
+        <AddButtonWrapper onClick={onAdd}>
           <IconAdd />
         </AddButtonWrapper>
       </HeaderActionWrapper>

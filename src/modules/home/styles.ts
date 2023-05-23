@@ -48,3 +48,5 @@ export const AddButtonWrapper = styled.div`
     background-color: #ffffff30;
   }
 `;
+
+export const TableBodyWrapper = styled.div``;
