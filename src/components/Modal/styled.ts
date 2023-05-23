@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import { ModalProps } from "../../types/componentPropsType";
 
-export const ModalWrapper = styled.div<ModalProps>`
+export const ModalWrapper = styled.div<{ isshow?: string }>`
   max-width: 560px;
   width: 95%;
   position: fixed;
@@ -13,11 +12,11 @@ export const ModalWrapper = styled.div<ModalProps>`
   border-radius: 20px;
   background: #0a0a0a;
   box-shadow: 0px 0px 40px 5px rgba(255, 255, 255, 0.2);
-  opacity: ${({ isShow }) => (isShow ? 1 : 0)};
-  visibility: ${({ isShow }) => (isShow ? "visible" : "hidden")};
+  opacity: ${({ isshow }) => (isshow ? 1 : 0)};
+  visibility: ${({ isshow }) => (isshow ? "visible" : "hidden")};
 `;
 
-export const ModalOverLay = styled.div<ModalProps>`
+export const ModalOverLay = styled.div<{ isshow?: string }>`
   position: fixed;
   z-index: 1;
   top: 0;
@@ -25,8 +24,8 @@ export const ModalOverLay = styled.div<ModalProps>`
   bottom: 0;
   right: 0;
   background-color: #00000080;
-  opacity: ${({ isShow }) => (isShow ? 1 : 0)};
-  visibility: ${({ isShow }) => (isShow ? "visible" : "hidden")};
+  opacity: ${({ isshow }) => (isshow ? 1 : 0)};
+  visibility: ${({ isshow }) => (isshow ? "visible" : "hidden")};
   backdrop-filter: blur(5px);
 `;
 

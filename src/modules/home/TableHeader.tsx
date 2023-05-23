@@ -22,6 +22,7 @@ export const TableHeader: React.FC<TableHeaderProps> = ({
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchInput(e.target.value);
+    onSearch && onSearch(e.target.value);
   };
 
   return (
@@ -39,7 +40,7 @@ export const TableHeader: React.FC<TableHeaderProps> = ({
             suffix={<IconSearch />}
           />
         </SearchBoxWrapper>
-        <AddButtonWrapper onClick={onAdd}>
+        <AddButtonWrapper onClick={() => onAdd("add", -1)}>
           <IconAdd />
         </AddButtonWrapper>
       </HeaderActionWrapper>

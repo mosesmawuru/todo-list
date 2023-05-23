@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const TodoItemWrapper = styled.div`
   margin-top: 25px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #49454f;
@@ -17,6 +18,11 @@ export const ItemTitleWrapper = styled.div`
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
+    span {
+      margin-left: 10px;
+      font-size: 16px;
+      opacity: 0.7;
+    }
   }
 `;
 
@@ -42,8 +48,14 @@ export const ItemAction = styled.div`
   }
 `;
 
-export const ArrowWrapper = styled.div`
+export const ArrowWrapper = styled.div<{ isexpand?: string }>`
   display: flex;
   align-items: center;
   margin-right: 22px;
+  transform: ${({ isexpand }) => (isexpand ? "rotate(-180deg)" : "rotate(0)")};
+`;
+
+export const ItemDescWrapper = styled.div`
+  width: 100%;
+  padding: 10px 30px 10px 40px;
 `;

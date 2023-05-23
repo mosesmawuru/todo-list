@@ -13,10 +13,13 @@ export type TodoItemProps = {
   onEdit: () => void;
   onStatusChange: () => void;
   onRemove: () => void;
+  onExpend: (id: number) => void;
+  isExpand?: boolean;
 } & TodoDataTypes;
 
 export type TableBodyProps = {
   todoList: Array<TodoDataTypes>;
+  onEdit: (key: "add" | "edit", id: number) => void;
 };
 
 export type ButtonProps = {
@@ -29,11 +32,13 @@ export type ButtonProps = {
 export type ModalProps = {
   type?: "edit" | "add";
   isShow: boolean;
+  editId?: number;
   onClose?: () => void;
   onSave?: (data: string) => void;
+  onOk?: () => void;
 };
 
 export type TableHeaderProps = {
-  onAdd?: () => void;
-  onSearch?: () => void;
+  onAdd: (key: "add" | "edit", id: number) => void;
+  onSearch?: (value: string) => void;
 };

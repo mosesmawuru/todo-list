@@ -49,4 +49,11 @@ export const AddButtonWrapper = styled.div`
   }
 `;
 
-export const TableBodyWrapper = styled.div``;
+export const TableBodyWrapper = styled.div`
+  & > p {
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 30px;
+  }
+`;
